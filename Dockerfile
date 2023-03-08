@@ -1,4 +1,7 @@
 FROM quay.io/wildfly/wildfly-s2i:latest
+WORKDIR build
+COPY pom.xml .
+COPY src src
 RUN mvn clean package -Popenshift
 RUN mv "target/server/standalone/deployments" "target/jboss-ext-deployments"
 
