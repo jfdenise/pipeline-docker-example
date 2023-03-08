@@ -1,5 +1,5 @@
 FROM quay.io/wildfly/wildfly-s2i:latest
-
+WORKDIR /build
 RUN mvn clean package -Popenshift
 RUN mv "target/server/standalone/deployments" "target/jboss-ext-deployments"
 
