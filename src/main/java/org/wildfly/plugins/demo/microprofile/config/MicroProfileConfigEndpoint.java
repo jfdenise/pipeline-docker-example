@@ -17,7 +17,7 @@ public class MicroProfileConfigEndpoint {
 
 
     @Inject
-    @ConfigProperty(name = "config1", defaultValue = "Default value for config1 comes from my code")
+    @ConfigProperty(name = "config1", defaultValue = "XXX Default value for config1 comes from my code")
     String config1;
 
     @Inject
