@@ -1,7 +1,8 @@
 FROM quay.io/wildfly/wildfly-s2i:latest
 WORKDIR /build
 RUN mkdir src
-COPY * ./src
+RUN ls -l
+COPY --chown=jboss:root * ./src
 ENV S2I_DESTINATION_DIR=/build
 RUN /usr/local/s2i/assemble
 RUN mv "src/target/server/standalone/deployments" "target/jboss-ext-deployments"
